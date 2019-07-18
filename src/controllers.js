@@ -1,5 +1,5 @@
 exports.readme = async (ctx) =>{
-    await ctx.render('messenger');
+    await ctx.render('readme.pug');
 };
 exports.messenger = async (ctx) =>{
     await ctx.render('messenger/messenger.pug');
