@@ -8,15 +8,15 @@ const app = new Koa();
 const router = new Router();
 
 app.use(views(path.join(__dirname, '/src/templates'), {
-    extension: 'pug',
-    map: {
-        pug: 'pug',
-    },
+  extension: 'pug',
+  map: {
+    pug: 'pug',
+  },
 }));
 
-app.use(serve(path.join(__dirname, "/src/public")));
+app.use(serve(path.join(__dirname, '/src/public')));
 router.use('/', require('./src/routes').routes());
 
 app.use(router.routes());
-let PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT);
