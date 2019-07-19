@@ -1,6 +1,6 @@
 include mixins
 nav.sidebar
-    -const barIcons = [{"name":"notification","photo":"../img/notification.svg","someElse":true},{"name":"profile","photo":"../img/my_profile_nonact.svg"},{"name":"settings","photo":"../img/settings.svg"},{"name":"people","photo":"../img/team.svg"},{"name":"message","photo":"../img/messages_act.svg","active":true}]
+    -const barIcons = [{"name":"notification","photo":"../img/notification.svg","link":'#',"notify":true},{"name":"profile","photo":"../img/my_profile_nonact.svg","link":'https://hw9db2.herokuapp.com/profile'},{"name":"settings","photo":"../img/settings.svg","link":'#'},{"name":"people","photo":"../img/team.svg","link":'#'},{"name":"message","photo":"../img/messages_act.svg","link":'https://hw9db2.herokuapp.com/messenger',"active":true}]
         li.sidebar__logo
             a(href='#')
                 img(src='../img/logo.svg', alt='logo')

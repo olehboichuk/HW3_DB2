@@ -4,13 +4,13 @@ mixin icons (svg)
             a(href='#')
                 img(src=svg.photo, alt='photo')
     else
-        if !svg.someElse
+        if !svg.notify
             li.sidebar__icons
-                a(href='#')
+                a(href=svg.link)
                     img(src=svg.photo, alt='photo')
         else
             li.sidebar__icons
-                a(href='#')
+                a(href=svg.link)
                     img(src=svg.photo, alt='photo')
                 a.sidebar__notification--one(href='#')
                     img(src='../img/one.svg', alt='1')
