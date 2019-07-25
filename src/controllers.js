@@ -7,6 +7,9 @@ exports.profile = async (ctx) => {
 exports.search = async (ctx) => {
   await ctx.render('search/search.pug');
 };
+exports.admin = async (ctx) => {
+  await ctx.render('admin/admin.pug');
+};
 exports.sign_in = async (ctx) => {
   await ctx.render('sign_in');
 };

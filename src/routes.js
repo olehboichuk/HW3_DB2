@@ -14,5 +14,6 @@ router.get('reset-mail', ctrl.reset_mail);
 router.get('verify', ctrl.verify);
 router.get('sign-up-pass', ctrl.sign_up_pass);
 router.get('verify-up', ctrl.verify_up);
+router.get('admin', ctrl.admin);
 
 module.exports = router;
