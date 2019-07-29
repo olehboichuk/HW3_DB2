@@ -7,9 +7,9 @@ const config = require('config');
 const mongoose = require('mongoose');
 const serve = require('koa-static');
 
-mongoose.connect(config.get('databaseUrl'), {
-  useNewUrlParser: true,
-});
+// mongoose.connect(config.get('databaseUrl'), {
+//   useNewUrlParser: true,
+// });
 
 const app = new Koa();
 const router = new Router();
