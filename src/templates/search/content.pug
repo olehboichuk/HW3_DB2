@@ -219,16 +219,12 @@ main
                             p.item__text $ 1,200 USD
             .map
 script(type='text/javascript', src='./js/search.js')
-script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC2iFRtLlnjKtx8hfQ8FNKWKKVD1s5TK_s&callback=init', async='', defer='').
-    // When the window has finished loading create our google map below
-    function init() {
-        var mapOptions = {
-            // How zoomed in you want the map to start at (always required)
-            zoom: 11,
-            // The latitude and longitude to center the map (always required)
-            center: new google.maps.LatLng(40.6700, -73.9400), // New York
-            // How you would like to style the map.
-            // This is where you would paste any style found on Snazzy Maps.
+script.
+    function initMap() {
+        var element = document.querySelector('.map');
+        var options = {
+            zoom: 5,
+            center: {lat: 55.7558, lng: 37.6173},
             styles: [
                 {
                     "featureType": "all",
@@ -398,17 +394,43 @@ script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=
                         }
                     ]
                 }
-            ]
+            ],
         };
-        // Get the HTML DOM element that will contain your map
-        // We are using a div with id="map" seen below in the <body>
-        var mapElement = document.querySelector('.map');
-        // Create the Google Map using our element and options defined above
-        var map = new google.maps.Map(mapElement, mapOptions);
-        // Let's also add a marker while we're at it
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(40.6700, -73.9400),
-            map: map,
-            title: 'Snazzy!'
-        });
+        var myMap = new google.maps.Map(element, options);
+        var markers = [
+            {
+                coordinates: {lat: 55.751956, lng: 37.622634},
+                info: '<h3>Москва</h3><br><img src="https://placehold.it/200x150"><br><p>Описание</p>'
+            },
+            {
+                coordinates: {lat: 59.940208, lng: 30.328092},
+                info: '<h3>Санкт-Петербург</h3><br> <img src="https://placehold.it/200x150"><br><p>Описание</p>'
+            },
+            {
+                coordinates: {lat: 50.449973, lng: 30.524911},
+                info: '<h3>Киев</h3><br><img src="https://placehold.it/200x150"><br><p>Описание</p>'
+            }
+        ];
+        for (var i = 0; i < markers.length; i++) {
+            addMarker(markers[i]);
+        }
+
+        function addMarker(properties) {
+            var marker = new google.maps.Marker({
+                position: properties.coordinates,
+                map: myMap
+            });
+            if (properties.image) {
+                marker.setIcon(properties.image);
+            }
+            if (properties.info) {
+                var InfoWindow = new google.maps.InfoWindow({
+                    content: properties.info
+                });
+                marker.addListener('click', function () {
+                    InfoWindow.open(myMap, marker);
+                });
+            }
+        }
     }
+script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC2iFRtLlnjKtx8hfQ8FNKWKKVD1s5TK_s&callback=initMap')
