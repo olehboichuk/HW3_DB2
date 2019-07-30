@@ -10,13 +10,12 @@ main
                 select.filter__select
                     option
             .filters__filter
+                p.filters__filter--text SEARCH
+                input.filter__select(placeholder="Type your query...")
+            .filters__filter
                 p.filters__filter--text category
                 select.filter__select
                     option Category
-            .filters__filter
-                p.filters__filter--text subcategory
-                select.filter__select
-                    option Subcategory
             .filters__filter
                 p.filters__filter--text service
                 select.filter__select
@@ -28,16 +27,16 @@ main
         .separator
         article.results
             .results__sort
-                a.results__map(href="#") Show map
+                a.results__map.list--active(href="#") Show map
+                a.results__results(href="#") Show results
                 .sort__items.list--active
-                    .pretty.p-default.p-round.p-thick
-                        input(type="radio" name="radio1" checked)
-                        .state.p-success-o
-                            label.items__text by price
-                    .pretty.p-default.p-round.p-thick
-                        input(type="radio" name="radio1")
-                        .state.p-success-o
-                            label.items__text by rating
+                    img.wifi(src="../img/wifi.svg")
+                    .input__radio
+                        input(id="radio" type="radio" name="radio1" checked)
+                        label.items__text(for="radio") by price
+                    .input__radio
+                        input(id="radio1" type="radio" name="radio1")
+                        label.items__text(for="radio1") by rating
             .results__list.list--active
                 each use in users
                     +users(use)

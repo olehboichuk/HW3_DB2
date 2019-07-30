@@ -161,7 +161,8 @@ body {
   display: flex !important;
 }
 
-.results__map {
+.results__map, .results__results {
+  display: none;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -320,6 +321,39 @@ body {
   display: none;
   margin-top: 25px;
   height: 60vh;
+}
+
+.wifi {
+  margin-right: 10%;
+}
+
+.input__radio {
+  width: 100px;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio] + label:before {
+  content: "\26AB";
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #F0F1F3;
+  line-height: 20px;
+  margin: -5px 5px 0 0;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0;
+  transition: font-size ease .3s;
+
+}
+
+input[type=radio]:checked + label:before {
+  color: #0AD69C;
+  font-size: 10px;
 }
 
 @import "sidebar";
