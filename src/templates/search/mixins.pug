@@ -14,3 +14,19 @@ mixin icons (svg)
                     img(src=svg.photo, alt='photo')
                 a.sidebar__notification--one(href='#')
                     img(src='../img/one.svg', alt='1')
+mixin users (user)
+    .list__item
+        img.item__photo(src=user.photo)
+        .item__info
+            a.item__name(href="#")=user.name
+            .item__location
+                img.location__ico(src="../img/location.svg")
+                p.item__text=user.location
+            .item__stack
+                .item__location
+                    p.item__bold--text Stack:
+                    p.item__text=user.stack
+                a.item__more(href="#") More
+            .item__price
+                p.item__bold--text Base Daily Rate:
+                p.item__text=user.rate
