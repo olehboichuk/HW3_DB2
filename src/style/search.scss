@@ -40,6 +40,7 @@ body {
     padding: 20px 10px 0px 10px;
   }
 }
+
 .content {
   &::-webkit-scrollbar {
     width: 6px;
@@ -92,7 +93,7 @@ body {
   margin-top: 11px;
   margin-left: 5px;
   @include for-tablet {
-   display: none;
+    display: none;
   }
 }
 
@@ -156,6 +157,10 @@ body {
   justify-content: space-between;
 }
 
+.list--active {
+  display: flex !important;
+}
+
 .results__map {
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -171,7 +176,7 @@ body {
 }
 
 .sort__items {
-  display: flex;
+  display: none;
   justify-content: space-around;
 }
 
@@ -192,7 +197,7 @@ body {
 
 .results__list {
   overflow-y: scroll;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   margin-top: 25px;
   height: 82%;
@@ -309,6 +314,12 @@ body {
   margin-left: 1px;
   letter-spacing: -0.046704px;
   color: #2A74DB;
+}
+
+.map {
+  display: none;
+  margin-top: 25px;
+  height: 82%;
 }
 
 @import "sidebar";
