@@ -15,5 +15,4 @@ result.addEventListener('click', () => {
     sortItems.classList.add('list--active');
     map.classList.remove('list--active');
   }
-
 });
