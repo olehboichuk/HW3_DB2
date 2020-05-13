@@ -12,5 +12,3 @@
 <p><a href="https://hw9db2.herokuapp.com/profile"><b>Profile</b></a></p>
 <h2><b>Search</b></h2>
 <p><a href="https://hw9db2.herokuapp.com/search"><b>Search</b></a></p>
-<h2><b>Admin</b></h2>
-<p><a href="https://hw9db2.herokuapp.com/admin"><b>Admin</b></a></p>
